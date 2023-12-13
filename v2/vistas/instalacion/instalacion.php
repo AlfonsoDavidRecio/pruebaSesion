@@ -6,7 +6,7 @@
 <body>
     <main>
         <section>
-            <a href="index.php?control=instalacion_con&metodo=porcesoInstalacion"">Instalacion</a>
+            <a href="index.php?control=Instalacion_Con&metodo=procesoInstalacion"">Instalacion</a>
         </section>
     </main>
 </body>

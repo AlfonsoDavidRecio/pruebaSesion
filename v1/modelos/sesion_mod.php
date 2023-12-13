@@ -1,6 +1,6 @@
 <?php
 
-require_once 'C:\xampp\htdocs\pruebaSesion\v1\config\configHost.php';
+require_once __DIR__ . '\..\config\configHost.php';
 
 class Sesion_Mod{
 

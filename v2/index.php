@@ -3,8 +3,8 @@
 require_once 'config\configHost.php';
 
 
-$nombreControl = constant("CONTROLADOR_DEFAULT");
-$nombreMetodo = constant("METODO_DEFAULT");
+$nombreControl = constant("CONTROLADOR_DEFAULT_V2");
+$nombreMetodo = constant("METODO_DEFAULT_V2");
 
 if(isset($_GET["control"])) $nombreControl = $_GET["control"];
 if(isset($_GET["metodo"])) $nombreMetodo = $_GET["metodo"];

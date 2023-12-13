@@ -1,6 +1,6 @@
 <?php
 
-require_once 'C:\xampp\htdocs\pruebaSesion\v2\modelos\instalacion_mod.php';
+require_once __DIR__ . '\..\modelos\instalacion_mod.php';
 
 class Instalacion_Con{
     
@@ -11,7 +11,7 @@ class Instalacion_Con{
 
     public function __construct()
     {
-        $this->vista = 'instalacion';
+        $this->vista = '/instalacion/instalacion';
         $this->objeto = new Instalacion_Mod();
     }
 
@@ -19,7 +19,16 @@ class Instalacion_Con{
     /**
      * Método encargado del proceso de instalación
      */
-    public function porcesoInstalacion(){
+    public function procesoInstalacion()
+    {
+        /**
+         * Verificar si la tabla existe. Si existe no hace nada. Si no existe crea la tabla e inserta una fila
+         */
+        if (!$this->objeto->verificarTabla()) {
+            //No existe
+            $this->objeto->crearTabla();
 
+            $this->objeto->inserccionInicial();
+        } 
     }
 }

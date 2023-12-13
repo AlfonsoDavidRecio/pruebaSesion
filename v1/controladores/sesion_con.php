@@ -1,6 +1,6 @@
 <?php
 
-require_once 'C:\xampp\htdocs\pruebaSesion\v1\modelos\sesion_mod.php';
+require_once __DIR__ . '\..\modelos\sesion_mod.php';
 
 class Sesion_Con{
     
@@ -33,7 +33,7 @@ class Sesion_Con{
      */
     public function iniciar(){
         if(isset($_POST['nombre']) && isset($_POST['pw'])){
-            echo $_POST['pw'];
+    
             $resultadoUsuario = $this->objeto->login($_POST['nombre'], $_POST['pw']);    
             
             if($resultadoUsuario){
@@ -62,11 +62,11 @@ class Sesion_Con{
                 //Para asegurarse que la redireccion se ejecute correctamente
                 exit();
             }else{
-                echo 'Inicio de Sesion fallido';
+                header("Location: index.php?control=sesion_con&mensaje=false");
             }
 
         }else{
-            echo 'No hay datos para el inicio de sesion';
+            header("Location: index.php?control=sesion_con&mensaje=false");
         }
     }
 }

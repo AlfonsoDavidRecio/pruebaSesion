@@ -86,6 +86,7 @@
                         <input type="text" name="pw" placeholder="Introducir Contraseña">
                     </p>
                     <input type="submit">
+                    <?php echo "<p style='color: red; text-align: center;'>".$mensaje."</p>" ?>
                 </form>
             </div>
         </section>

@@ -2,6 +2,14 @@
 
 require_once 'config\configHost.php';
 
+// Verificación de parámetro 'mensaje' en la URL para mostrar mensajes.
+$mensaje = "";
+
+if(isset($_GET['mensaje'])) {
+    if ($_GET['mensaje'] === "false") {
+        $mensaje = 'Valores Incorrectos';
+    }
+}
 
 $nombreControl = constant("CONTROLADOR_DEFAULT");
 $nombreMetodo = constant("METODO_DEFAULT");
