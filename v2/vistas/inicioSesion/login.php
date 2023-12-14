@@ -63,6 +63,10 @@
             cursor: pointer;
         }
 
+        input[type="checkbox"] {
+            width: auto;
+        }
+
         input[type="submit"]:hover {
             background-color: #45a049;
         }
@@ -83,12 +87,26 @@
                     <p>
                         <label for="Introducir Contraseña">Contraseña</label>
                         <br/>
-                        <input type="text" name="pw" placeholder="Introducir Contraseña">
+                        <input type="text" name="pw" placeholder="Introducir Contraseña" id="contra">
+                        <input type="checkbox" id="mostrarContra"><label>Mostrar contraseña</label>
                     </p>
                     <input type="submit">
                     <?php echo "<p style='color: red; text-align: center;'>".$mensaje."</p>" ?>
                 </form>
             </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const contraInput = document.getElementById('contra');
+                    const mostrarContraCheckbox = document.getElementById('mostrarContra');
+
+                    // Configurar el tipo de input por defecto
+                    contraInput.type = 'password';
+
+                    mostrarContraCheckbox.addEventListener('change', function () {
+                        contraInput.type = mostrarContraCheckbox.checked ? 'text' : 'password';
+                    });
+                });
+            </script>
         </section>
     </main>
 </body>

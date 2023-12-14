@@ -11,3 +11,6 @@ if(isset($_SESSION['nombre'])) {
     echo "No se encontraron datos de sesión.";
 }
 ?>
+<div>
+    <a href="index.php?control=sesion_con">volver</a>
+</div>
