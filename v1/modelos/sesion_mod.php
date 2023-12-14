@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '\..\config\configHost.php';
+require_once __DIR__ . '/../config/configHost.php';
 
 class Sesion_Mod{
 

@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '\..\modelos\sesion_mod.php';
+require_once __DIR__ . '/../modelos/sesion_mod.php';
 
 class Sesion_con{
     

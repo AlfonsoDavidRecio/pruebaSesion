@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '\..\modelos\sesion_mod.php';
+require_once __DIR__ . '/../modelos/sesion_mod.php';
 
 class Sesion_Con{
     
@@ -67,11 +67,11 @@ class Sesion_Con{
     /**
      * Metodo que cambia la vista por defecto a la vista de minijuegos
      */
-    public function cambiarVistaMinijueg2(){
+    public function cambiarVista2(){
         $this->vista = 'vistaCulturalChain';
     }
 
-    public function cambiarVistaMinijueg3(){
+    public function cambiarVista3(){
         $this->vista = 'vistaTetris';
     }
 }

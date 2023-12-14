@@ -1,6 +1,9 @@
 <?php
 
-require_once 'config\configHost.php';
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require_once __DIR__ . '/config/configHost.php';
 
 $mensaje = "";
 
@@ -9,7 +12,7 @@ if(isset($_GET['mensaje'])) {
         $mensaje = 'Valores Incorrectos';
     }
     if ($_GET['mensaje'] === "instalacionFallida") {
-        $mensaje = 'Ya se habia hecho la instalacion';
+        $mensaje = 'La instalacion ya esta realizada';
     } 
 }
 
@@ -23,7 +26,7 @@ $directorioControlador = 'controladores/'.$nombreControl.'.php';
 
 // Comprobar si el controlador existe
 if(!file_exists($directorioControlador))
-    $directorioControlador = 'controladores/'.constant("CONTROLADOR_DEFAULT").'.php';
+    $directorioControlador = 'controladores/'.constant("CONTROLADOR_DEFAULT_V2").'.php';
 
 // Cargar controlador
 require_once $directorioControlador;
@@ -35,12 +38,7 @@ $controlador = new $nombreClase();
 /* Ver si el método está definido */
 $datosVista["datos"] = array();
 if (method_exists($controlador, $nombreMetodo)) {
-    if($nombreMetodo == "ajaxNivel" || $nombreMetodo == "ajaxMensajesNivel" || $nombreMetodo == "ajaxAnadirPartida" || $nombreMetodo == "ajaxPartida" || $nombreMetodo == "ajaxBasura" || $nombreMetodo == "ajaxPowerup"){
-        echo $controlador->{$nombreMetodo}();
-        return;
-    } else {
-        $datosVista["datos"] = $controlador->{$nombreMetodo}();
-    }
+    $datosVista["datos"] = $controlador->{$nombreMetodo}();
 }
    
 /* Cargar vistas */

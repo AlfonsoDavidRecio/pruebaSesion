@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '\..\modelos\instalacion_mod.php';
+require_once __DIR__ . '/../modelos/instalacion_mod.php';
 
 class Instalacion_Con{
     
