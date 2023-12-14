@@ -28,6 +28,7 @@ class Sesion_con{
         
     }*/
 
+
     /**
      * Esta es la funcion correspondiente para iniciar sesion
      */
@@ -47,10 +48,10 @@ class Sesion_con{
                 
                 switch($_SESSION['perfil']){
                     case 's':
-                        header("Location: vistas/inicioSesion/registrar.php");
+                        header("Location: index.php?control=sesion_con&metodo=cambiarVistaRegistrar");
                         break;
                     case 'a':
-                        header("Location: vistas/inicioSesion/minijuego.php");
+                        header("Location: index.php?control=sesion_con&metodo=cambiarVistaMinijuego");
                         break;
                     default:
                         header("Location: ./");
@@ -65,5 +66,19 @@ class Sesion_con{
         }else{
             header("Location: index.php?control=sesion_con&mensaje=false");
         }
+    }
+
+    /**
+     * Metodo que cambia la vista por defecto a la vista de registrar
+     */
+    public function cambiarVistaRegistrar(){
+        $this->vista = '/inicioSesion/registrar';
+    }
+
+    /**
+     * Metodo que cambia la vista por defecto a la vista de minijuegos
+     */
+    public function cambiarVistaMinijuego(){
+        $this->vista = '/inicioSesion/minijuego';
     }
 }
