@@ -29,6 +29,11 @@ class Instalacion_Con{
             $this->objeto->crearTabla();
 
             $this->objeto->inserccionInicial();
-        } 
+
+            //Redireccionar al inicio de sesion
+            header("Location: index.php?control=sesion_con");
+        }else{
+            header("Location: index.php?control=Instalacion_Con&mensaje=instalacionFallida");
+        }
     }
 }

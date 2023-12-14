@@ -2,6 +2,16 @@
 
 require_once 'config\configHost.php';
 
+$mensaje = "";
+
+if(isset($_GET['mensaje'])) {
+    if ($_GET['mensaje'] === "false") {
+        $mensaje = 'Valores Incorrectos';
+    }
+    if ($_GET['mensaje'] === "instalacionFallida") {
+        $mensaje = 'Ya se habia hecho la instalacion';
+    } 
+}
 
 $nombreControl = constant("CONTROLADOR_DEFAULT_V2");
 $nombreMetodo = constant("METODO_DEFAULT_V2");
