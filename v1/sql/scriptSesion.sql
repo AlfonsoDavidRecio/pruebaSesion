@@ -3,7 +3,7 @@
 CREATE TABLE us_Admin(
     idUsuario tinyint unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
     correo varchar(100) NOT NULL,
-    pw varchar(25) NOT NULL,
+    pw varchar(255) NOT NULL,
     nombre varchar(30) NOT NULL,
     perfil tinyint unsigned NOT NULL
 )ENGINE=InnoDB;

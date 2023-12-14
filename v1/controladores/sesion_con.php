@@ -16,19 +16,6 @@ class Sesion_Con{
     }
 
     /**
-     * Al hacer un alta estas registrando un usuario nuevo
-     */
-    /*public function register(){
-        $this->vista = 'login';
-        if(isset($_POST['correo']) && isset($_POST['pw']) && isset($_POST['nombre']) && isset($_POST['perfil'])){
-            $this->objeto->registrar($_POST['correo'], $_POST['pw'], $_POST['nombre'], $_POST['perfil']);    
-        }else{
-            echo 'No hay datos para el registro';
-        }
-        
-    }*/
-
-    /**
      * Esta es la funcion correspondiente para iniciar sesion
      */
     public function iniciar(){
@@ -47,13 +34,13 @@ class Sesion_Con{
                 
                 switch($_SESSION['perfil']){
                     case 0:
-                        header("Location: vistas/vistaEcocatch.php");
+                        header("Location: index.php?control=sesion_con&metodo=cambiarVista1");
                         break;
                     case 1:
-                        header("Location: vistas/vistaCulturalChain.php");
+                        header("Location: index.php?control=sesion_con&metodo=cambiarVista2");
                         break;
                     case 2:
-                        header("Location: vistas/vistaTetris.php");
+                        header("Location: index.php?control=sesion_con&metodo=cambiarVista3");
                         break;
                     default:
                         header("Location: ./");
@@ -68,5 +55,23 @@ class Sesion_Con{
         }else{
             header("Location: index.php?control=sesion_con&mensaje=false");
         }
+    }
+
+    /**
+     * Metodo que cambia la vista por defecto a la vista de registrar
+     */
+    public function cambiarVista1(){
+        $this->vista = 'vistaEcocatch';
+    }
+
+    /**
+     * Metodo que cambia la vista por defecto a la vista de minijuegos
+     */
+    public function cambiarVistaMinijueg2(){
+        $this->vista = 'vistaCulturalChain';
+    }
+
+    public function cambiarVistaMinijueg3(){
+        $this->vista = 'vistaTetris';
     }
 }

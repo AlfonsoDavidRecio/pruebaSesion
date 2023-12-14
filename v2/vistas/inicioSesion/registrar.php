@@ -63,6 +63,21 @@
             width: 100%;
             margin-bottom: 15px;
         }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff; /* Color de texto blanco, ajusta según tus preferencias */
+            background-color: #4caf50; /* Color de fondo azul, ajusta según tus preferencias */
+            border-radius: 5px; /* Bordes redondeados */
+            transition: background-color 0.3s; /* Transición suave del color de fondo */
+            margin-top: 5px;
+        }
+
+        a:hover {
+            background-color: #2980b9; /* Color de fondo azul más oscuro al pasar el ratón */
+        }
     </style>
 </head>
 <body>
@@ -86,7 +101,7 @@
             <h1>Registrar Admin Minijuegos</h1>
             <hr>
             <div>
-                <form action="../index.php?control=sesion_con&metodo=register" method="POST">
+                <form action="index.php?control=sesion_con&metodo=register" method="POST">
                     <p>
                         <label for="Introducir Nombre">Nombre</label>
                         <br/>
@@ -102,14 +117,10 @@
                         <br/>
                         <input type="text" name="pw" placeholder="Introducir Contraseña">
                     </p>
-                    <p>
-                        <label for="Perfil de Administrador">Perfil</label>
-                        <br/>
-                        <input type="text" name="perfil" placeholder="Perfil de Administrador">
-                    </p>
                     <input type="submit">
                 </form>
             </div>
+            <a href="index.php?control=sesion_con">volver</a>
             <?php echo "<p style='color: red; text-align: center;'>".$mensaje."</p>" ?>
         </section>
     </main>

@@ -12,5 +12,5 @@ if(isset($_SESSION['nombre'])) {
 }
 ?>
 <p>
-    <a href="../">Volver</a>
+    <a href="index.php?control=sesion_con">Volver</a>
 </p>

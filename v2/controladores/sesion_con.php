@@ -16,17 +16,18 @@ class Sesion_con{
     }
 
     /**
-     * Al hacer un alta estas registrando un usuario nuevo
+     * Al hacer un alta de un nuevo admin que administrará un minijuego
      */
-    /*public function register(){
-        $this->vista = 'login';
-        if(isset($_POST['correo']) && isset($_POST['pw']) && isset($_POST['nombre']) && isset($_POST['perfil'])){
-            $this->objeto->registrar($_POST['correo'], $_POST['pw'], $_POST['nombre'], $_POST['perfil']);    
+    public function register(){
+        $this->vista = '/inicioSesion/registrar';
+
+        if(isset($_POST['correo']) && isset($_POST['pw']) && isset($_POST['nombre'])){
+            $this->objeto->registrar($_POST['correo'], $_POST['pw'], $_POST['nombre'],"a");    
         }else{
             echo 'No hay datos para el registro';
         }
         
-    }*/
+    }
 
 
     /**

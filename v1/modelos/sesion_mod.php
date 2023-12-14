@@ -14,14 +14,6 @@ class Sesion_Mod{
         $this->conexion = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
     }
 
-    /**
-     * Inserta un nuevo usuario
-     */
-    /*public function registrar($correo,$pw,$nombre,$perfil){
-        $sql = 'INSERT INTO us_Admin (correo, pw, nombre, perfil) VALUES ("'.$correo.'", "'.$pw.'", "'.$nombre.'", "'.$perfil.'")';
-
-        $this->conexion->query($sql);
-    }*/
 
     /**
      * Hace el select del usuario para ver si esta en la base de datos

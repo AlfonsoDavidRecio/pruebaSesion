@@ -15,13 +15,15 @@ class Sesion_Mod{
     }
 
     /**
-     * Inserta un nuevo usuario
+     * Inserta un nuevo administrador de minijuego
      */
-    /*public function registrar($correo,$pw,$nombre,$perfil){
-        $sql = 'INSERT INTO us_Admin (correo, pw, nombre, perfil) VALUES ("'.$correo.'", "'.$pw.'", "'.$nombre.'", "'.$perfil.'")';
+    public function registrar($correo,$pw,$nombre,$perfil){
+        $pwHaseada = password_hash($pw, PASSWORD_DEFAULT);
+        
+        $sql = 'INSERT INTO admins (nombre, pw, correo, perfil) VALUES ("'.$nombre.'", "'.$pwHaseada.'", "'.$correo.'", "'.$perfil.'")';
 
         $this->conexion->query($sql);
-    }*/
+    }
 
     /**
      * Hace el select del usuario para ver si esta en la base de datos
