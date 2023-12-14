@@ -12,5 +12,5 @@ if(isset($_SESSION['nombre'])) {
 }
 ?>
 <div>
-    <a href="index.php?control=sesion_con">volver</a>
+    <a href="index.php?control=sesion_con&metodo=cerrarSesion">Cerrar Sesion</a>
 </div>

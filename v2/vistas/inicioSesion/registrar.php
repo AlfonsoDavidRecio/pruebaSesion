@@ -120,7 +120,7 @@
                     <input type="submit">
                 </form>
             </div>
-            <a href="index.php?control=sesion_con">volver</a>
+            <a href="index.php?control=sesion_con&metodo=cerrarSesion">Cerrar Sesion</a>
             <?php echo "<p style='color: red; text-align: center;'>".$mensaje."</p>" ?>
         </section>
     </main>

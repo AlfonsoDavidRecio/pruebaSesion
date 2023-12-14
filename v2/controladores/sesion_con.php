@@ -82,4 +82,14 @@ class Sesion_con{
     public function cambiarVistaMinijuego(){
         $this->vista = '/inicioSesion/minijuego';
     }
+
+    public function cerrarSesion(){
+        $this->vista = '/inicioSesion/login';
+
+        //Inicia la sesion
+        session_start();
+
+        //Para despues destruirla
+        session_destroy();
+    }
 }
